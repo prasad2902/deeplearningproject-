@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 from typing import List
 
-HYPEN_E_DOT = "-e ."  # You need to define this variable.
+HYPEN_E_DOT = '-e .'
 
 def get_requirements(file_path: str) -> List[str]:
     requirements = []
@@ -11,13 +11,14 @@ def get_requirements(file_path: str) -> List[str]:
 
         if HYPEN_E_DOT in requirements:
             requirements.remove(HYPEN_E_DOT)
+
     return requirements
 
 setup(
     name="xray",
     version="0.0.1",
-    author="Prasad Kharche",  # Corrected typo from 'auther' to 'author'
+    author="Prasad Kharche",
     author_email="prasadkharche02@gmail.com",
-    install_requires=get_requirements("requirements.txt"),  # Path to the requirements file
+    install_requires=get_requirements('requirements_dev.txt'),
     packages=find_packages()
 )
